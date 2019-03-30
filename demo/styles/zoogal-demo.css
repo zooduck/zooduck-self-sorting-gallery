@@ -136,7 +136,7 @@
 .config-demo__ctrls button {
     display: flex;
     align-items: center;
-    border: solid 2px #eee;
+    border: 0;
     background-color: #68417e;
     color: #fff;
     font: normal 19px calibri, sans-serif;
