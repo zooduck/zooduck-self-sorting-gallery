@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- title -->
+    <title>Self Sorting Gallery by ZOODUCK on 14 October 2018</title>
+    <!-- meta -->
+    <meta name="author" content="zooduck, wesley pumpkinhead">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- library -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- style -->
+    <link href="./styles/zoogal-demo.css" rel="stylesheet">
+    <!-- script  -->
+    <script src="../dist/zoogal.js"></script>
+    <script src="./scripts/zoogal-demo-fakeGalleryDataAPI.js"></script>
+    <script src="./scripts/zoogal-demo-config.js" defer></script>
+    <script src="./scripts/zoogal-demo-welcome-screen.js" defer></script>
+</head>
+
+<body>
+    <div class="welcome-screen">
+        <div class="welcome-screen__title">
+            <span>ZOODUCK GALLERY API</span>
+            <div class="welcome-screen__tear-strip">
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+                <div class="welcome-screen__tear-strip-item">
+                    <div class="welcome-screen__tear-strip-item-arrow"></div>
+                </div>
+            </div>
+            <div class="welcome-screen__tear-strip-cover"></div>
+        </div>
+    </div>
+    <div class="welcome-screen-bottom-half"></div>
+
+    <div class="welcome-screen-squares"></div>
+
+    <div class='config-demo'>
+        <div class='config-demo__ctrls'>
+            <button id='loadGallery'><i class='material-icons'>photo_library</i></button>
+            <button id='toggleConfig'><i class='material-icons'>settings</i></button>
+            <button id='saveConfigOptions'><i class='material-icons'>save</i></button>
+        </div>
+        <div class="config-demo__options">
+            <form id="configDemoForm"></form>
+        </div>
+    </div>
+
+    <script>
+        // ============
+        // TEST API
+        // ============
+        var customConfig = {
+            // mobilePortraitBreakpoint: 425,
+            // desktopLandscapeBreakpoint: 1024,
+            // placeholderUrl: '',
+            // loadAll: false,
+            // upscaleImagesToFit: false,
+            // upscaleRatioMax: 1.5,
+            // disableAnimationsForMobile: false,
+            // enablePlaceholderInLightbox: true,
+            // useTinyThumbnailPlaceholderInLightbox: true,
+            // useLoadingSpinnerForLightbox: true,
+            // thumbnailBorderWidth: 0,
+            // galleryBackgroundColor: '#ffffff', // Note: input[type=color] requires a 6 digit hex
+            // placeholderAnimationDuration: 1,
+            // lightboxBackgroundColor: '#111111', // Note: input[type=color] requires a 6 digit hex
+            // keepImageOrder: true,
+            // columns: 4 // Note: This equates to squareSpacePerRow
+            // columnsForMobile: 3 // Note: This equates to mobilePortraitSquareSpacePerRow
+        }
+
+        document.onreadystatechange = function() {
+
+            if (document.readyState == 'complete') {
+                // ================
+                // [1] Set Config (optional)
+                // method setOptions(object config_settings)
+                // ================
+                zoogal.setOptions(customConfig);
+                // ================
+                // [2] Create Gallery
+                // method registerGallery(string gallery_name, array image_objects)
+                // ================
+                zoogal.registerGallery('landscapes', fakeGalleryData(85));
+                // ================
+                // [3] Load Gallery
+                // method loadGallery(string gallery_name)
+                // ================
+                // zoogal.loadGallery('landscapes'); // Now called via Load Gallery button in UI
+
+                console.log('zoogal.galleries', zoogal.galleries);
+
+                // Generates a UI for for setting config (DEMO only)
+                setConfigDemoOptions();
+            }
+        }
+        // ============
+        // \\ TEST API
+        // ============
+    </script>
+</body>
+
+</html>

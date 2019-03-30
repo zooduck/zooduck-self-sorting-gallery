@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+}
+
+@keyframes animateConfigDemoOptionEnterTheDuck {
+    0% {
+        transform: translateY(-160%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes animateConfigDemoEnterTheDuck {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.zooduck-gallery-container {
+    margin-top: 100px;
+}
+
+.config-demo {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #eee;
+    font: normal 19px calibri, sans-serif;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: fixed;
+    z-index: 1;
+    background: #222;
+    animation: animateConfigDemoEnterTheDuck .25s .5s both;
+}
+
+.config-demo--options-visible {
+    height: 100vh;
+}
+
+.config-demo--options-visible .config-demo__options {
+    height: calc(100vh - 100px);
+}
+
+.config-demo__options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    user-select: none;
+}
+.config-demo__option {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    overflow: hidden;
+}
+.config-demo__option:hover {
+    background-color: #111;
+}
+.config-demo__option.hide {
+    display: none;
+}
+.config-demo__option label:first-of-type {
+    flex-grow: 1;
+    padding-right: 10px;
+    word-break: break-all;
+    animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
+}
+.config-demo__option input {
+    width: 70px;
+    font: normal 19px calibri, sans-serif;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    background: #222;
+    animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
+}
+.config-demo__option input[type=color] {
+    height: 40px;
+}
+.config-demo__option input:not([type=color]) {
+    padding: 0 5px;
+    border: solid transparent;
+}
+.config-demo__option input:not([type=color]):focus, .config-demo__option input:not([type=color]):active {
+    background-color: #fff;
+    font-weight: bold;
+    color: #222;
+}
+
+.config-demo-option__toggle-label {
+    animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
+}
+.config-demo-option__toggle-label input[type="checkbox"] {
+    display: none;
+}
+.config-demo-option__toggle-label input[type="checkbox"]:checked ~ .config-demo-option__toggle {
+    background-color: #1e90ff;
+}
+.config-demo-option__toggle-label input[type="checkbox"]:checked ~ .config-demo-option__toggle .config-demo-option__toggle-switch {
+    transform: translateX(35px);
+}
+.config-demo-option__toggle {
+    width: 70px;
+    background-color: grey;
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.config-demo-option__toggle-switch {
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    transition: all .25s;
+}
+
+.config-demo__ctrls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    padding: 10px 0 10px 10px;
+    user-select: none;
+}
+.config-demo__ctrls button {
+    display: flex;
+    align-items: center;
+    border: solid 2px #eee;
+    background-color: #68417e;
+    color: #fff;
+    font: normal 19px calibri, sans-serif;
+    outline: none;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 5px;
+
+    background: #222;
+}
+.config-demo__ctrls button:active {
+    transform: scale(.9);
+}
+#toggleConfig.fixed {
+    position: fixed;
+    left: 5px;
+    top: 5px;
+}
+
+@keyframes welcomeScreenTopHalfExitTheDuck {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+@keyframes welcomeScreenBottomHalfExitTheDuck {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 100%);
+    }
+}
+@keyframes welcomeScreenTearStripTear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%)
+    }
+}
+@keyframes welcomeScreenTearStripDestroy {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-110%, 0);
+    }
+}
+@keyframes welcomeScreenImagePlaceholderFadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+@keyframes welcomesScreenImagePlaceholderExplode__A {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+        border: none;
+    }
+    25% {
+        opacity: 1;
+        transform: translate(-100vw, -200%) rotate(-180deg);
+        border: none;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 100vh) rotate(0deg);
+        border: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, -120vh) rotate(-360deg);
+        border: none;
+    }
+}
+@keyframes welcomesScreenImagePlaceholderExplode__B {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+        border: none;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(100vw, 0) rotate(180deg);
+        border: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-120vw, 0) rotate(360deg);
+        border: none;
+    }
+}
+.placeholder-fade-in {
+    animation: welcomeScreenImagePlaceholderFadeIn 1s linear;
+}
+.placeholder-explode--A {
+    animation: welcomesScreenImagePlaceholderExplode__A 5s linear;
+}
+.placeholder-explode--B {
+    animation: welcomesScreenImagePlaceholderExplode__B 5s linear;
+}
+
+.welcome-screen {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: calc(50vh + 40px);
+    background: #222;
+}
+.welcome-screen-squares {
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50vh;
+    height: 100vh;
+    background: transparent;
+}
+.welcome-screen-bottom-half {
+    position: fixed;
+    left: 0;
+    top: calc(50vh + 38px);
+    width: 100vw;
+    height: calc(50vh - 36px);
+    background: #222;
+}
+.welcome-screen--exit-the-duck {
+    animation: welcomeScreenTopHalfExitTheDuck .5s forwards;
+}
+.welcome-screen__bottom-half--exit-the-duck {
+    animation: welcomeScreenBottomHalfExitTheDuck .5s forwards;
+}
+
+.welcome-screen__row {
+    display: flex;
+}
+.welcome-screen__row:first-of-type {
+    margin-top: 10px;
+}
+.welcome-screen__row:last-of-type {
+    margin-top: -20px;
+}
+
+.welcome-screen__row-item  {
+    height: calc(100vh / 6);
+    opacity: 0;
+    flex-grow: 1;
+    border: solid #222 0;
+    border-right-width: 10px;
+}
+.welcome-screen__row-item:first-of-type {
+    border-left-width: 10px;
+}
+
+.welcome-screen__title {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    width: 100vw;
+    font: normal 2em sans-serif;
+    color: #fff;
+    background: #222;
+    text-align: center;
+}
+
+.welcome-screen__tear-strip {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 1px;
+    overflow: hidden;
+}
+.welcome-screen__tear-strip--destroy {
+    animation: welcomeScreenTearStripDestroy .25s linear both;
+}
+.welcome-screen__tear-strip-cover {
+    position: relative;
+    margin-top: -21px;
+    width: 100%;
+    height: 22px;
+    display: flex;
+    background-color: #222;
+    z-index: 1;
+}
+.welcome-screen__tear-strip-cover--tear {
+    animation: welcomeScreenTearStripTear 1s forwards;
+}
+.welcome-screen__tear-strip-item {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    background-color: whitesmoke;
+}
+.welcome-screen__tear-strip-item-arrow {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    border: solid #111;
+    border-width: 4px 4px 0 0;
+}
+
+.density-slide {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: left .5s;
+    z-index: 2;
+    background-image: url('../img/im_your_density.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #111;
+    width: 100%;
+    height: 100%;
+}
+.density-slide.hide {
+    left: 100%;
+}
