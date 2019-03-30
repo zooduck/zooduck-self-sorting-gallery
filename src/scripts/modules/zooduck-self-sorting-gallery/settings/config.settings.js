@@ -63,7 +63,7 @@ const config = (function() {
             enablePlaceholderInLightbox: true,
             useTinyThumbnailPlaceholderInLightbox: true,
             useLoadingSpinnerForLightbox: true,
-            thumbnailBorderWidth: 0,
+            thumbnailBorderWidth: 5,
             galleryBackgroundColor: '#ffffff',
             placeholderAnimationDuration: 1, // 1 second default animation-duration for placeholders
             lightboxBackgroundColor: '#111111',
