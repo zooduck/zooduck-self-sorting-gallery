@@ -56,6 +56,9 @@
     overflow: auto;
     user-select: none;
 }
+.config-demo__options #configDemoForm {
+    margin: auto;
+}
 .config-demo__option {
     display: flex;
     padding: 8px;
@@ -70,7 +73,7 @@
 }
 .config-demo__option label:first-of-type {
     flex-grow: 1;
-    padding-right: 10px;
+    padding-right: 20px;
     word-break: break-all;
     animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
 }
