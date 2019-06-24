@@ -386,7 +386,7 @@ const lightbox = (function() {
 
         lightboxElements.lightboxGlass.ontouchmove = function(e) {
             const clientX = e.changedTouches[0].clientX;
-            _touchMoveHandler(clientX);      
+            _touchMoveHandler(clientX);
         };
 
         lightboxElements.lightboxGlass.ontouchend = function(e) {
@@ -404,6 +404,24 @@ const lightbox = (function() {
 
     })();
 
+    (function ADD_EVENT_LISTENERS_FOR_KEYS() {
+
+        window.addEventListener('keyup', (e) => {
+            if (lightboxActive) {
+                const keyCode = e.which || e.keyCode || e.charCode;
+                if (keyCode === 27) { // ESC
+                    _closeLightbox();
+                }
+                if (keyCode === 37) { // LEFT ARROW
+                    _exitActiveHero('right');
+                }
+                if (keyCode === 39) { // RIGHT ARROW
+                    _exitActiveHero('left');
+                }
+            }
+        });
+
+    })();
 
     return {
         open(imageData = {}) {

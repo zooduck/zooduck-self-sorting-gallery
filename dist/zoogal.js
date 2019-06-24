@@ -1052,6 +1052,29 @@
       });
     })();
 
+    (function ADD_EVENT_LISTENERS_FOR_KEYS() {
+      window.addEventListener('keyup', function (e) {
+        if (lightboxActive) {
+          var keyCode = e.which || e.keyCode || e.charCode;
+
+          if (keyCode === 27) {
+            // ESC
+            _closeLightbox();
+          }
+
+          if (keyCode === 37) {
+            // LEFT ARROW
+            _exitActiveHero('right');
+          }
+
+          if (keyCode === 39) {
+            // RIGHT ARROW
+            _exitActiveHero('left');
+          }
+        }
+      });
+    })();
+
     return {
       open: function open() {
         var imageData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
