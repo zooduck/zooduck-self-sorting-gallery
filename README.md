@@ -14,6 +14,7 @@ Include the following `<script>` tag in the `<head>` of your page:
 ```
 
 - Create an array of image objects using the following format:
+### image object
 ```javascript
 {
     width, // The naturalWidth in pixels of the full size (hero) image
