@@ -6,10 +6,12 @@ Library for generating thumbnail galleries without whitespace.
 ### To view on GitHub Pages:
 - https://zooduck.github.io/zoogal-self-sorting-gallery/demo/
 
-# Usage
-- Include zoogal.js on your page:
+## Usage
+Include the following `<script>` tag in the `<head>` of your page:
 
-`<script src='https://raw.githubusercontent.com/zooduck/zooduck-self-sorting-gallery/master/dist/zoogal.js'></script>`
+```html
+<script src='https://raw.githubusercontent.com/zooduck/zooduck-self-sorting-gallery/master/dist/zoogal.js'></script>
+```
 
 - Create an array of image objects using the following format:
 ```javascript
