@@ -1,5 +1,5 @@
 # zooduck-self-sorting-gallery
-Library for generating thumbnail galleries without whitespace.
+Library for generating perfect thumbnail galleries without whitespace.
 
 ![alt text](https://github.com/zooduck/screenshots/blob/master/zoogal-self-sorting-gallery/zoogal-self-sorting-gallery-1.png)
 
