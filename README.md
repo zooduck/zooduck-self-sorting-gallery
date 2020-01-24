@@ -4,7 +4,7 @@ Library for generating perfect thumbnail galleries without whitespace.
 ![alt text](https://github.com/zooduck/screenshots/blob/master/zoogal-self-sorting-gallery/zoogal-self-sorting-gallery-1.png)
 
 ### To view on GitHub Pages:
-- https://zooduck.github.io/zoogal-self-sorting-gallery/demo/
+- https://zooduck.github.io/zooduck-self-sorting-gallery/demo/
 
 ## Usage
 Include the following `<script>` tag in the `<head>` of your page:
@@ -29,7 +29,7 @@ Include the following `<script>` tag in the `<head>` of your page:
     }
 }
 ```
-**NOTE:** zoogal supports <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">Responsive Images</a> using the `<picture>` tag. To make use of this feature, simply provide an array of source objects to the `sources` prop. Entirely optional!
+**NOTE:** This tool supports <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">Responsive Images</a> using the `<picture>` tag. To make use of this feature, simply provide an array of source objects to the `sources` prop. Entirely optional!
 
 ### source object example
 ```javascript
