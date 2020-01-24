@@ -29,7 +29,7 @@ Include the following `<script>` tag in the `<head>` of your page:
     }
 }
 ```
-**NOTE:** zoogal supports *Responsive Images* using the `<picture>` tag. To make use of this feature, simply provide an array of source objects to the `sources` prop. Entirely optional!
+**NOTE:** zoogal supports <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">Responsive Images</a> using the `<picture>` tag. To make use of this feature, simply provide an array of source objects to the `sources` prop. Entirely optional!
 
 ### source object example
 ```javascript
