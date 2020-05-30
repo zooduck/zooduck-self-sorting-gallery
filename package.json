@@ -14,8 +14,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx rollup -c",
-    "start": "npx rollup -c --watch"
+    "build": "rollup -c",
+    "start": "rollup -c --watch"
   },
   "author": "zooduck",
   "license": "ISC"

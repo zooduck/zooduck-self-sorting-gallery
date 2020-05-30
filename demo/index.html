@@ -22,51 +22,59 @@
 <body>
     <div class="welcome-screen">
         <div class="welcome-screen__title">
-            <span>ZOODUCK GALLERY API</span>
-            <div class="welcome-screen__tear-strip">
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-                <div class="welcome-screen__tear-strip-item">
-                    <div class="welcome-screen__tear-strip-item-arrow"></div>
-                </div>
-            </div>
-            <div class="welcome-screen__tear-strip-cover"></div>
+            <div class="welcome-screen__title-heading">ZOOGAL</div>
+            <small>Create perfect thumbnail galleries (with lazy loading and picture tag support)</small>
         </div>
     </div>
-    <div class="welcome-screen-bottom-half"></div>
+    <div class="welcome-screen-bottom-half">
+        <div class="welcome-screen__tear-strip">
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+            <div class="welcome-screen__tear-strip-item">
+                <div class="welcome-screen__tear-strip-item-arrow"></div>
+            </div>
+        </div>
+        <div class="welcome-screen__tear-strip-cover"></div>
+    </div>
 
     <div class="welcome-screen-squares"></div>
 
-    <div class='config-demo'>
-        <div class='config-demo__ctrls'>
-            <button id='loadGallery'><i class='material-icons'>photo_library</i></button>
-            <button id='toggleConfig'><i class='material-icons'>settings</i></button>
-            <button id='saveConfigOptions'><i class='material-icons'>save</i></button>
+    <div id="configDemo" class="config-demo">
+        <div class="config-demo__ctrls">
+            <div class="config-demo__load-gallery-ctrl">
+                <span id='loadGallery'>Click To Load Gallery</span>
+            </div>
+            <button id='toggleConfig' class="config-demo__toggle-config-ctrl"><i class="material-icons">settings</i></button>
+            <button id='saveConfigOptions' class="config-demo__save-config-ctrl"><i class="material-icons">save</i></button>
         </div>
         <div class="config-demo__options">
             <form id="configDemoForm"></form>
+        </div>
+        <div class="config-demo__scrollbar-cover"></div>
+        <div id="saveNotificationScreen" class="config-demo__save-notification-screen">
+            <h2>Saving your settings...</h2>
         </div>
     </div>
 

@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-y: scroll;
+}
+
 @keyframes animateConfigDemoOptionEnterTheDuck {
     0% {
         transform: translateY(-160%);
@@ -21,43 +25,48 @@
 }
 
 .zooduck-gallery-container {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .config-demo {
+    position: fixed;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    flex-flow: wrap;
     left: 0;
     top: 0;
+    transform: translateY(-100%);
     width: 100%;
-    color: #eee;
+    height: 64px;
     font: normal 19px calibri, sans-serif;
     overflow: hidden;
     margin-bottom: 20px;
-    position: fixed;
-    z-index: 1;
-    background: #222;
-    animation: animateConfigDemoEnterTheDuck .25s .5s both;
+}
+.config-demo--active {
+    animation: animateConfigDemoEnterTheDuck .25s both;
 }
 
 .config-demo--options-visible {
-    height: 100vh;
-}
-
-.config-demo--options-visible .config-demo__options {
-    height: calc(100vh - 100px);
+    height: auto;
 }
 
 .config-demo__options {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 0;
+    background-color: #fff;
     overflow: auto;
     user-select: none;
 }
+
+.config-demo--options-visible .config-demo__options {
+    height: calc(100vh - 54px);
+}
 .config-demo__options #configDemoForm {
     margin: auto;
+    width: 100%;
+    max-width: 450px;
 }
 .config-demo__option {
     display: flex;
@@ -66,7 +75,7 @@
     overflow: hidden;
 }
 .config-demo__option:hover {
-    background-color: #111;
+    background-color: lavender;
 }
 .config-demo__option.hide {
     display: none;
@@ -74,7 +83,8 @@
 .config-demo__option label:first-of-type {
     flex-grow: 1;
     padding-right: 20px;
-    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
     animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
 }
 .config-demo__option input {
@@ -82,10 +92,8 @@
     font: normal 19px calibri, sans-serif;
     border: none;
     outline: none;
-    color: #fff;
     cursor: pointer;
     user-select: none;
-    background: #222;
     animation: animateConfigDemoOptionEnterTheDuck 250ms linear both;
 }
 .config-demo__option input[type=color] {
@@ -96,9 +104,8 @@
     border: solid transparent;
 }
 .config-demo__option input:not([type=color]):focus, .config-demo__option input:not([type=color]):active {
-    background-color: #fff;
+    background-color: lavender;
     font-weight: bold;
-    color: #222;
 }
 
 .config-demo-option__toggle-label {
@@ -130,13 +137,18 @@
 
 .config-demo__ctrls {
     display: flex;
-    justify-content: space-between;
+    z-index: 1;
+    justify-content: flex-end;
     width: 100%;
-    height: 70px;
+    height: 64px;
     padding: 10px 0 10px 10px;
+    background-color: #222;
+    color: #fff;
     user-select: none;
 }
-.config-demo__ctrls button {
+.config-demo__load-gallery-ctrl,
+.config-demo__toggle-config-ctrl,
+.config-demo__save-config-ctrl {
     display: flex;
     align-items: center;
     border: 0;
@@ -147,16 +159,62 @@
     margin-right: 10px;
     cursor: pointer;
     padding: 5px;
-
     background: #222;
+}
+.config-demo__toggle-config-ctrl--active {
+    border: solid 2px #fff;
+}
+.config-demo__load-gallery-ctrl {
+    flex-grow: 1;
+    justify-content: center;
+    cursor: default;
+}
+.config-demo__load-gallery-ctrl span {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.config-demo__save-config-ctrl {
+    display: none;
+}
+.config-demo--options-visible .config-demo__load-gallery-ctrl {
+    display: none;
+}
+.config-demo--options-visible .config-demo__save-config-ctrl {
+    display: flex;
 }
 .config-demo__ctrls button:active {
     transform: scale(.9);
 }
-#toggleConfig.fixed {
+.config-demo__scrollbar-cover {
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 100%;
+    background-color: #fff;
+}
+@media (max-width: 1024px) {
+    .config-demo__scrollbar-cover {
+        display: none;
+    }
+}
+.config-demo__save-notification-screen {
+    display: none;
+}
+.config-demo__save-notification-screen h2 {
+    font-weight: normal;
+}
+.config-demo__save-notification-screen--active {
     position: fixed;
-    left: 5px;
-    top: 5px;
+    display: flex;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    color: #fff;
 }
 
 @keyframes welcomeScreenTopHalfExitTheDuck {
@@ -164,7 +222,7 @@
         transform: translate(0, 0);
     }
     100% {
-        transform: translate(0, -100%);
+        transform: translate(0, -120%);
     }
 }
 @keyframes welcomeScreenBottomHalfExitTheDuck {
@@ -172,7 +230,7 @@
         transform: translate(0, 0);
     }
     100% {
-        transform: translate(0, 100%);
+        transform: translate(0, 120%);
     }
 }
 @keyframes welcomeScreenTearStripTear {
@@ -183,14 +241,6 @@
         transform: translateX(100%)
     }
 }
-@keyframes welcomeScreenTearStripDestroy {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-110%, 0);
-    }
-}
 @keyframes welcomeScreenImagePlaceholderFadeIn {
     0% {
         opacity: 0;
@@ -199,7 +249,7 @@
         opacity: 1;
     }
     100% {
-        opacity: 0; 
+        opacity: 0;
     }
 }
 @keyframes welcomesScreenImagePlaceholderExplode__A {
@@ -269,9 +319,11 @@
     height: 50vh;
     height: 100vh;
     background: transparent;
+    cursor: pointer;
 }
 .welcome-screen-bottom-half {
     position: fixed;
+    z-index: 2;
     left: 0;
     top: calc(50vh + 38px);
     width: 100vw;
@@ -309,13 +361,18 @@
 .welcome-screen__title {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 10px;
     transform: translate(-50%);
-    width: 100vw;
+    width: 360px;
     font: normal 2em sans-serif;
     color: #fff;
     background: #222;
+    padding:  0 20px;
     text-align: center;
+}
+.welcome-screen__title-heading {
+    border-bottom: solid 4px #fff;
+    padding-bottom: 4px;
 }
 
 .welcome-screen__tear-strip {
@@ -326,7 +383,7 @@
     overflow: hidden;
 }
 .welcome-screen__tear-strip--destroy {
-    animation: welcomeScreenTearStripDestroy .25s linear both;
+    visibility: hidden;
 }
 .welcome-screen__tear-strip-cover {
     position: relative;

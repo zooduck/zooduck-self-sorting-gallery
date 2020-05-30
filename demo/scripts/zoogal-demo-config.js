@@ -22,24 +22,30 @@ const toggleConfig = () => {
 
 document.querySelector('#saveConfigOptions').onclick = function(e) {
     e.preventDefault();
+
     if (!configDemo.classList.contains('config-demo--options-visible')) {
-        return
+        return;
     }
+
+    document.getElementById('saveNotificationScreen').classList.add('config-demo__save-notification-screen--active');
+    document.getElementById('toggleConfig').classList.remove('config-demo__toggle-config-ctrl--active');
+
     const newOptions = {}
     Array.from(form.elements).forEach( (item) => {
         if (item.name) {
             newOptions[item.name] = item.value === 'on' ? item.checked : item.value;
-        }                
+        }
     });
-    
+
     zoogal.setOptions(newOptions);
 
     updateOptions();
 
     setTimeout(function() {
         toggleConfig();
-    }, 500);
-   
+        document.getElementById('saveNotificationScreen').classList.remove('config-demo__save-notification-screen--active');
+    }, 1000);
+
 }
 
 document.querySelector('#loadGallery').onclick = function(e) {
@@ -49,6 +55,7 @@ document.querySelector('#loadGallery').onclick = function(e) {
 
 document.querySelector('#toggleConfig').onclick = function(e) {
     e.preventDefault();
+    this.classList.toggle('config-demo__toggle-config-ctrl--active');
     toggleConfig();
 }
 
@@ -112,17 +119,17 @@ const setConfigDemoOptions = () => {
                 optionContainer.appendChild(toggleLabel);
 
             } else {
-                
+
                 const input = document.createElement('input');
                 input.style.animationDelay = staggeredDelay + 'ms';
-                
+
                 if (option.match(/color/i)) {
                     input.type = 'color';
                 }
 
                 input.value = zoogal.config[option];
                 input.name = option;
-            
+
                 optionContainer.appendChild(input);
             }
 

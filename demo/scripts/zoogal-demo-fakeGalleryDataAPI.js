@@ -74,7 +74,7 @@ const galleryDataModel = (width, height) => {
 
     const thumbnailSrc = `https://picsum.photos/${thumbnailWidths[thumbnailWidths.length - 1]}/${thumbnailHeights[thumbnailHeights.length - 1]}/?image=${picsumImageId}`;
     const heroSrc = `https://picsum.photos/${width}/${height}/?image=${picsumImageId}`;
-    
+
     const thumbnailSources = breakpoints.map( (breakpoint, index, arr) => {
         return {
             media: `(max-width: ${breakpoint}px)`,
