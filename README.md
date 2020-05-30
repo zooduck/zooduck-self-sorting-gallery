@@ -17,8 +17,8 @@ Include the following `<script>` tag in the `<head>` of your page:
 ### image object
 ```javascript
 {
-    width, // The naturalWidth in pixels of the full size (hero) image
-    height, // The naturalHeight in pixels of the full size (hero) image
+    width: 1920, // The naturalWidth in pixels of the full size (hero) image
+    height: 1080, // The naturalHeight in pixels of the full size (hero) image
     hero: {
         src: 'http://zoo.com/images/full/begemotik.png',
         sources: []
@@ -63,8 +63,8 @@ zoogal.loadGallery('your_gallery_name');
 | placeholderUrl | '' | If set, this image will be used instead of the auto-generated multi-coloured SVG placeholders. |
 | loadAll | false | Disable lazy loading. |
 | keepImageOrder | true | Image order is maintained. Set this option to false if you want to maintain a consistent height for your gallery rows. |
-| upscaleImagesToFit | false | Set to true if you want to reduce the amount of whitespace. *Requires keepImageOrder: true.* |
-| upscaleRatioMax | 1.5 | The maximum amount of upscale. *Requires keepImageOrder: true, upscaleImagesToFit: true.* |
+| upscaleImagesToFit | false | Set to true if you want to reduce the amount of whitespace. **Requires keepImageOrder: true.** |
+| upscaleRatioMax | 1.5 | The maximum amount of upscale. **Requires keepImageOrder: true, upscaleImagesToFit: true.** |
 | disableAnimationsForMobile | false | *References mobileBreakpoint.* |
 | useLoadingSpinnerForLightbox | true | Use Loading Spinner in Lightbox when image is loading. |
 | thumbnailBorderWidth | 5 | The amount of Thumbnail Grid spacing in pixels. |
@@ -74,4 +74,4 @@ zoogal.loadGallery('your_gallery_name');
 | columnsPerRow | 4 | Affects the number of images per row. Higher values = more images per row. **Note: The more images per row, the smaller they will be.** |
 | columsForMobile | 3 | Affects the number of images per row for a mobile device in portrait orientation. Higher values = more images per row. **Note: The more images per row, the smaller they will be.** *References mobilePortraitBreakpoint.* |
 | enablePlaceholderInLightbox | true | If set to true, displays a placeholder (SVG / thumbnail) when the image is loading. |
-| useTinyThumbnailPlaceholderInLightbox | true | *Requires enablePlaceholderInLightbox: true.* If set to true, the Gallery Thumbnail will be used as the placeholder (upscaled pixelated effect). If set to false, a solid colour SVG will be used instead. |
+| useTinyThumbnailPlaceholderInLightbox | true | If set to true, the Gallery Thumbnail will be used as the placeholder (upscaled pixelated effect). If set to false, a solid colour SVG will be used instead. **Requires enablePlaceholderInLightbox: true.** |
