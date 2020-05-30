@@ -1,7 +1,7 @@
 # Zooduck Self Sorting Gallery
 Create perfect thumbnail galleries without whitespace.
 
-![alt text](https://github.com/zooduck/screenshots/blob/master/zoogal-self-sorting-gallery/zoogal-self-sorting-gallery-1.png)
+![alt text](https://github.com/zooduck/screenshots/blob/master/zooduck-self-sorting-gallery/zooduck-self-sorting-gallery-2.png)
 
 ### To view on GitHub Pages:
 - https://zooduck.github.io/zooduck-self-sorting-gallery/demo/
