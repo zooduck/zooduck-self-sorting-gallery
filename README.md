@@ -1,5 +1,5 @@
 # Zooduck Self Sorting Gallery
-Create perfect thumbnail galleries without whitespace.
+Create perfect thumbnail galleries without whitespace. Supports <a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank">Lazy Loading</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank">Responsive Images</a>.
 
 ![alt text](https://github.com/zooduck/screenshots/blob/master/zooduck-self-sorting-gallery/zooduck-self-sorting-gallery-2.png)
 
